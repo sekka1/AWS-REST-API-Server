@@ -1,0 +1,8 @@
+// AWS Keys
+exports.aws_accessKeyId = 'your_aws_accesskey';
+exports.aws_secretAccessKey = 'your_aws_secret_key';
+exports.aws_region = 'us-west-2';
+
+// AWS service versions
+exports.aws_DynamoDB_version = '2012-08-10';
+exports.aws_CloudFormation_version = '2010-05-15';
