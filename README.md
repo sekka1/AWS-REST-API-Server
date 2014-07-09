@@ -1,5 +1,7 @@
 AWS REST API Server
 ===================
+[![Build Status](https://drone.io/github.com/sekka1/AWS-REST-API-Server/status.png)](https://drone.io/github.com/sekka1/AWS-REST-API-Server/latest)
+
 This is basically a wrapper around the AWS javascript SDK that exposes out a REST interface for its functionality.
 
 Running the REST API
