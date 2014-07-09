@@ -4,6 +4,10 @@ AWS REST API Server
 
 This is basically a wrapper around the AWS javascript SDK that exposes out a REST interface for its functionality.
 
+AWS Credentials Setup
+=====================
+You will need to get keys to your AWS account for the API to make requests with it.  These key strings are placed into a file called config.js.  There is a config.js.sample that you can copy and use.
+
 Running the REST API
 ====================
 
@@ -27,3 +31,13 @@ AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSD
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property)
 
     curl -X DELETE localhost:8080/cloudformation/<STACK_NAME>
+
+Docker Container
+=================
+There is a Dockerfile at the root of this project to setup a ready to go container serving out this functionality.  
+
+This project is also being built on docker automatically on ever commit.  You can pull it from there also.  [https://registry.hub.docker.com/u/garland/aws-rest-api-server/](https://registry.hub.docker.com/u/garland/aws-rest-api-server/)
+
+## Running the container
+
+    docker run -p 80:8080 garland/aws-rest-api-server
