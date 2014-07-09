@@ -41,3 +41,4 @@ This project is also being built on docker automatically on ever commit.  You ca
 ## Running the container
 
     docker run -p 80:8080 garland/aws-rest-api-server
+    

@@ -1,8 +1,8 @@
 {
-    "name": "Email_Notification",
+    "name": "AWS-REST-API-Server",
     "version": "0.0.1",
-    "description": "Email Notification service",
-    "author": "Emile Baizel <ebaizel@gmail.com>",
+    "description": "AWS REST API Server",
+    "author": "Garland <garlandk@gmail.com>",
     "dependencies": {
         "express": "3.4.8",
         "aws-sdk": ">=2.0.5"
