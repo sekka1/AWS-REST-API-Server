@@ -11,6 +11,7 @@ You will need to get keys to your AWS account for the API to make requests with 
 Running the REST API
 ====================
 
+    npm install
     node app.js
     
 Using the REST API
