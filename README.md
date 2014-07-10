@@ -40,6 +40,13 @@ AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSD
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property)
 
     curl -X DELETE localhost:8080/cloudformation/<STACK_NAME>
+    
+### validateTemplate
+
+AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#validateTemplate-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#validateTemplate-property)
+
+    curl -X GET localhost:8080/cloudformation \
+    -d 'cloudformation_template=<FULL_CLOUDFORMATION_JSON_TEMPLATE>'
 
 Docker Container
 =================
