@@ -67,6 +67,7 @@ process.on('uncaughtException', function(err) {
 app.put('/cloudformation', cloudformation.createStack);
 app.post('/cloudformation', cloudformation.updateStack);
 app.delete('/cloudformation/:stackName', cloudformation.deleteStack);
+app.get('/cloudformation', cloudformation.validateTemplate);
 
 // Health checks
 app.get('/heartbeat', function(req, res) {

@@ -62,3 +62,18 @@ exports.deleteStack = function(req, res){
         }
     });
 };
+
+exports.validateTemplate = function(req, res){
+
+    var template = req.body.cloudformation_template;
+
+    cloudformation.validateTemplate(template, function(err, result){
+        if(err){
+            console.log(err);
+            res.json(400, err);
+        }else{
+            console.log(result);
+            res.json(200, result);
+        }
+    });
+};
