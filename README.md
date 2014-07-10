@@ -26,6 +26,14 @@ AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSD
     -d 'stack_config={"StackName":"testAutomationStack","OnFailure":"ROLLBACK"}' \
     -d 'cloudformation_template=<FULL_CLOUDFORMATION_JSON_TEMPLATE>' 
 
+### updateStack
+
+AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#updateStack-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#updateStack-property)
+
+    curl -X POST localhost:8080/cloudformation \
+    -d 'stack_config={"StackName":"testAutomationStack"}' \
+    -d 'cloudformation_template=<FULL_CLOUDFORMATION_JSON_TEMPLATE>' 
+
 ### deleteStack
 
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property)
