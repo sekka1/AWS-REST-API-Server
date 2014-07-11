@@ -5,6 +5,7 @@
     "author": "Garland <garlandk@gmail.com>",
     "dependencies": {
         "express": "3.4.8",
-        "aws-sdk": ">=2.0.5"
+        "aws-sdk": ">=2.0.5",
+        "strip-json-comments": ">=0.1.3"
     }
 }

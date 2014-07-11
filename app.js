@@ -6,7 +6,8 @@
 var express = require('express')
     , http = require('http')
     , config = require('./config.js')
-    , cloudformation = require('./routes/cloudformation.js');
+    , cloudformation = require('./routes/cloudformation.js')
+    , jsonStripComments = require('./routes/json-stripe-comments.js');;
 
 var app = express();
 
@@ -68,6 +69,9 @@ app.put('/cloudformation', cloudformation.createStack);
 app.post('/cloudformation', cloudformation.updateStack);
 app.delete('/cloudformation/:stackName', cloudformation.deleteStack);
 app.get('/cloudformation', cloudformation.validateTemplate);
+
+// JSON strip comments
+app.post('/json-strip-comments', jsonStripComments.strip);
 
 // Health checks
 app.get('/heartbeat', function(req, res) {
