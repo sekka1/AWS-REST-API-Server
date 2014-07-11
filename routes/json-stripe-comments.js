@@ -9,7 +9,7 @@ exports.strip = function(req, res){
             console.log('error...');
             res.json(500, err);
         }else{
-            res.json(200, result);
+            res.send(200, result);
         }
     });
 };

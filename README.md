@@ -48,6 +48,12 @@ AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSD
     curl -X GET localhost:8080/cloudformation \
     -d 'cloudformation_template=<FULL_CLOUDFORMATION_JSON_TEMPLATE>'
 
+## JSON Strip Comments
+Strips out the comments in a JSON string.  This is useful for CloudFormation templates where you comment inside the JSON template.
+
+    curl -X POST localhost:8080/json-strip-comments \
+    -d 'json={/**comment here*/ "json":"here"}'
+
 Docker Container
 =================
 There is a Dockerfile at the root of this project to setup a ready to go container serving out this functionality.  
