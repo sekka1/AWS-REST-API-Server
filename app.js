@@ -68,7 +68,7 @@ process.on('uncaughtException', function(err) {
 app.put('/cloudformation', cloudformation.createStack);
 app.post('/cloudformation', cloudformation.updateStack);
 app.delete('/cloudformation/:stackName', cloudformation.deleteStack);
-app.get('/cloudformation', cloudformation.validateTemplate);
+app.post('/cloudformation/validate', cloudformation.validateTemplate);
 
 // JSON strip comments
 app.post('/json-strip-comments', jsonStripComments.strip);
