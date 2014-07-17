@@ -72,7 +72,6 @@ var allowCrossDomain = function(req, res, next) {
 app.use(logErrors);
 app.use(clientErrorHandler);
 app.use(errorHandler);
-app.use(allowCrossDomain);
 
 process.on('uncaughtException', function(err) {
     console.log('process died ', err);
@@ -83,16 +82,16 @@ process.on('uncaughtException', function(err) {
  */
 
 // CloudFormation
-app.put('/cloudformation', cloudformation.createStack);
-app.post('/cloudformation', cloudformation.updateStack);
-app.delete('/cloudformation/:stackName', cloudformation.deleteStack);
-app.post('/cloudformation/validate', cloudformation.validateTemplate);
+app.put('/cloudformation', allowCrossDomain, cloudformation.createStack);
+app.post('/cloudformation', allowCrossDomain, cloudformation.updateStack);
+app.delete('/cloudformation/:stackName', allowCrossDomain, cloudformation.deleteStack);
+app.post('/cloudformation/validate', allowCrossDomain, cloudformation.validateTemplate);
 
 // JSON strip comments
-app.post('/json-strip-comments', jsonStripComments.strip);
+app.post('/json-strip-comments', allowCrossDomain, jsonStripComments.strip);
 
 // Health checks
-app.get('/heartbeat', function(req, res) {
+app.get('/heartbeat', allowCrossDomain, function(req, res) {
     res.json(200, { message: 'Alive'});
 });
 
