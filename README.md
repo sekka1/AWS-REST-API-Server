@@ -45,7 +45,7 @@ AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSD
 
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#validateTemplate-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#validateTemplate-property)
 
-    curl -X GET localhost:8080/cloudformation \
+    curl -X POST localhost:8080/cloudformation/validate \
     -d 'cloudformation_template=<FULL_CLOUDFORMATION_JSON_TEMPLATE>'
 
 ## JSON Strip Comments
