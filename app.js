@@ -52,9 +52,27 @@ function errorHandler(err, req, res, next) {
     res.render('error', { error: err });
 }
 
+//
+// CORS Options
+//
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With, X-Auth-Token');
+
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+        res.send(200);
+    }
+    else {
+        next();
+    }
+};
+
 app.use(logErrors);
 app.use(clientErrorHandler);
 app.use(errorHandler);
+app.use(allowCrossDomain);
 
 process.on('uncaughtException', function(err) {
     console.log('process died ', err);
