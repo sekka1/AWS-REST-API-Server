@@ -1,3 +1,7 @@
+/**
+ * Routes for CloudFormation endpoint
+ *
+ */
 var cloudformation = require('../lib/AWS/cloudformation.js');
 
 exports.createStack = function(req, res){
