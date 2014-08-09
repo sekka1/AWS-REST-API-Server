@@ -7,7 +7,8 @@ var express = require('express')
     , http = require('http')
     , config = require('./config.js')
     , cloudformation = require('./routes/cloudformation.js')
-    , jsonStripComments = require('./routes/json-stripe-comments.js');;
+    , jsonStripComments = require('./routes/json-stripe-comments.js')
+    , sqs = require('./routes/sqs.js');
 
 var app = express();
 
@@ -94,6 +95,9 @@ app.post('/json-strip-comments', allowCrossDomain, jsonStripComments.strip);
 app.get('/heartbeat', allowCrossDomain, function(req, res) {
     res.json(200, { message: 'Alive'});
 });
+
+// SQS
+app.get('/sqs/:sqsParams', allowCrossDomain, sqs.receiveMessage);
 
 /**
  * Start Server
