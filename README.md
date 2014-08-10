@@ -64,6 +64,14 @@ The params has to be URL encoded.
 
     curl localhost:8080/sqs/<URL encoded params per the doc>
 
+### sendMessage
+
+AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#sendMessage-property
+
+    curl -v -X POST localhost:8080/sqs/sendMessage \
+    -d 'params=<SQS sendMessage PARAMS>'
+
+
 Docker Container
 =================
 There is a Dockerfile at the root of this project to setup a ready to go container serving out this functionality.  
