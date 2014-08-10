@@ -54,6 +54,16 @@ Strips out the comments in a JSON string.  This is useful for CloudFormation tem
     curl -X POST localhost:8080/json-strip-comments \
     -d 'json={/**comment here*/ "json":"here"}'
 
+## SQS
+
+### receiveMessage
+
+AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#receiveMessage-property
+
+The params has to be URL encoded.
+
+    curl localhost:8080/sqs/<URL encoded params per the doc>
+
 Docker Container
 =================
 There is a Dockerfile at the root of this project to setup a ready to go container serving out this functionality.  
