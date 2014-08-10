@@ -98,6 +98,7 @@ app.get('/heartbeat', allowCrossDomain, function(req, res) {
 
 // SQS
 app.get('/sqs/:sqsParams', allowCrossDomain, sqs.receiveMessage);
+app.post('/sqs/sendMessage', allowCrossDomain, sqs.sendMessage);
 
 /**
  * Start Server
