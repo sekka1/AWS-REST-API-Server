@@ -79,6 +79,13 @@ There is a Dockerfile at the root of this project to setup a ready to go contain
 This project is also being built on docker automatically on ever commit.  You can pull it from there also.  [https://registry.hub.docker.com/u/garland/aws-rest-api-server/](https://registry.hub.docker.com/u/garland/aws-rest-api-server/)
 
 ## Running the container
+You will need to pass in the config.js parameters to the containers via environmental variables.  Only the accessKeyId and secretAccessKey are required.
 
-    docker run -p 80:8080 garland/aws-rest-api-server
+    docker run \
+    -p 80:8080 \
+    --env accessKeyId=YOUR_KEY_HERE
+    --env secretAccessKey=YOUR_SECRET_KEY_HERE
+    --env aws_region=us-west-2
+    garland/aws-rest-api-server
     
+List of valid AWS regions: http://docs.aws.amazon.com/general/latest/gr/rande.html
