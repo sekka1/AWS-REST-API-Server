@@ -2,7 +2,6 @@ var ec2 = require('../lib/AWS/ec2.js');
 
 describe("EC2 functionality", function(){
 
-
     it("query the describeInstances interface and return a positive result", function(done){
 
         var params = JSON.parse('{"DryRun":false,"Filters":[{"Name":"tag:role","Values":["datastax-cassandra"]}]}');
@@ -22,5 +21,4 @@ describe("EC2 functionality", function(){
             done();
         });
     });
-
 });
