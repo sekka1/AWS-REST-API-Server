@@ -71,6 +71,15 @@ AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK
     curl -v -X POST localhost:8080/sqs/sendMessage \
     -d 'params=<SQS sendMessage PARAMS>'
 
+# EC2
+
+### describeInstances
+Search throughout your AWS account for information about various resources.
+
+AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/EC2.html#describeInstances-property
+
+    curl -v -X POST localhost:8080/ec2/describeInstances \
+    -d 'params=<describeInstances params>'
 
 Docker Container
 =================
