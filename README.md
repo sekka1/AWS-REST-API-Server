@@ -83,9 +83,9 @@ You will need to pass in the config.js parameters to the containers via environm
 
     docker run \
     -p 80:8080 \
-    --env accessKeyId=YOUR_KEY_HERE
-    --env secretAccessKey=YOUR_SECRET_KEY_HERE
-    --env aws_region=us-west-2
+    --env accessKeyId=YOUR_KEY_HERE \
+    --env secretAccessKey=YOUR_SECRET_KEY_HERE \
+    --env aws_region=us-west-2 \
     garland/aws-rest-api-server
     
 List of valid AWS regions: http://docs.aws.amazon.com/general/latest/gr/rande.html
