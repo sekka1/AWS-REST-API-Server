@@ -8,7 +8,8 @@ var express = require('express')
     , config = require('./config.js')
     , cloudformation = require('./routes/cloudformation.js')
     , jsonStripComments = require('./routes/json-stripe-comments.js')
-    , sqs = require('./routes/sqs.js');
+    , sqs = require('./routes/sqs.js')
+    , ec2 = require('./routes/ec2.js');
 
 var app = express();
 
@@ -99,6 +100,9 @@ app.get('/heartbeat', allowCrossDomain, function(req, res) {
 // SQS
 app.get('/sqs/:sqsParams', allowCrossDomain, sqs.receiveMessage);
 app.post('/sqs/sendMessage', allowCrossDomain, sqs.sendMessage);
+
+// EC2
+app.post('/ec2/describeInstances', allowCrossDomain, ec2.describeInstances);
 
 /**
  * Start Server
