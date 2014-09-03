@@ -14,11 +14,7 @@ exports.describeInstances = function(req, res){
 
     console.log('ec2 describeInstances');
 
-    try {
-        var params = JSON.parse(req.body.params);
-    }catch(e){
-        res.json(400, {error:"invalid json"});
-    }
+    var params = req.body;
 
     ec2.describeInstances(params, function(err, data){
         if(err){
