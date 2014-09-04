@@ -88,6 +88,7 @@ app.put('/cloudformation', allowCrossDomain, cloudformation.createStack);
 app.post('/cloudformation', allowCrossDomain, cloudformation.updateStack);
 app.delete('/cloudformation/:stackName', allowCrossDomain, cloudformation.deleteStack);
 app.post('/cloudformation/validate', allowCrossDomain, cloudformation.validateTemplate);
+app.get('/cloudformation/describeStacks/:stackName', allowCrossDomain, cloudformation.describeStacks);
 
 // JSON strip comments
 app.post('/json-strip-comments', allowCrossDomain, jsonStripComments.strip);

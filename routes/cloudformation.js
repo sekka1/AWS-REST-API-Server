@@ -81,3 +81,18 @@ exports.validateTemplate = function(req, res){
         }
     });
 };
+
+exports.describeStacks = function(req, res){
+
+    var stackName = req.param("stackName");
+
+    cloudformation.describeStacks(stackName, function(err, data){
+        if(err){
+            console.log(err);
+            res.json(400, err);
+        }else{
+            console.log(data);
+            res.json(200, data);
+        }
+    });
+};

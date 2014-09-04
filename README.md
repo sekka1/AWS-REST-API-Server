@@ -40,6 +40,12 @@ AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSD
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property)
 
     curl -X DELETE localhost:8080/cloudformation/<STACK_NAME>
+
+### describeStacks    
+
+AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#describeStacks-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#describeStacks-property)
+
+    curl -X GET localhost:8080/cloudformation/describeStacks/<STACK_NAME>    
     
 ### validateTemplate
 
