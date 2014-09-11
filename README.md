@@ -102,6 +102,10 @@ You will need to pass in the config.js parameters to the containers via environm
     --env accessKeyId=YOUR_KEY_HERE \
     --env secretAccessKey=YOUR_SECRET_KEY_HERE \
     --env aws_region=us-west-2 \
-    garland/aws-rest-api-server
+    --env aws_DynamoDB_version=2012-08-10 \
+    --env aws_CloudFormation_version=2010-05-15 \
+    --env aws_SQS_version=2012-11-05 \
+    --env aws_EC2_version=2014-06-15 \
+    -d garland/aws-rest-api-server
     
 List of valid AWS regions: http://docs.aws.amazon.com/general/latest/gr/rande.html
