@@ -120,8 +120,8 @@ You will need to pass in the config.js parameters to the containers via environm
 
     docker run \
     -p 80:8080 \
-    --env accessKeyId=YOUR_KEY_HERE \
-    --env secretAccessKey=YOUR_SECRET_KEY_HERE \
+    --env aws_accessKeyId=YOUR_KEY_HERE \
+    --env aws_secretAccessKey=YOUR_SECRET_KEY_HERE \
     --env aws_region=us-west-2 \
     --env aws_DynamoDB_version=2012-08-10 \
     --env aws_CloudFormation_version=2010-05-15 \
