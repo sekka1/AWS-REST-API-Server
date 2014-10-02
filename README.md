@@ -97,6 +97,17 @@ AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK
     curl -v -X POST localhost:8080/ec2/createTags \
     -H 'Content-Type: application/json' \
     -d '<createTags params>'
+    
+# Route53
+
+### changeResourceRecordSets
+Use this action to create or change your authoritative DNS information.
+
+AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Route53.html#changeResourceRecordSets-property
+
+    curl -v -X POST localhost:8080/route53/changeResourceRecordSets \
+    -H 'Content-Type: application/json' \
+    -d '<createTags params>'
 
 Docker Container
 =================
@@ -116,6 +127,7 @@ You will need to pass in the config.js parameters to the containers via environm
     --env aws_CloudFormation_version=2010-05-15 \
     --env aws_SQS_version=2012-11-05 \
     --env aws_EC2_version=2014-06-15 \
+    --env aws_route53_version=2013-04-01 \
     -d garland/aws-rest-api-server
     
 List of valid AWS regions: http://docs.aws.amazon.com/general/latest/gr/rande.html

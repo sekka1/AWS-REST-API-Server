@@ -9,7 +9,8 @@ var express = require('express')
     , cloudformation = require('./routes/cloudformation.js')
     , jsonStripComments = require('./routes/json-stripe-comments.js')
     , sqs = require('./routes/sqs.js')
-    , ec2 = require('./routes/ec2.js');
+    , ec2 = require('./routes/ec2.js')
+    , route53 = require('./routes/route53.js');
 
 var app = express();
 
@@ -105,6 +106,9 @@ app.post('/sqs/sendMessage', allowCrossDomain, sqs.sendMessage);
 // EC2
 app.post('/ec2/describeInstances', allowCrossDomain, ec2.describeInstances);
 app.post('/ec2/createTags', allowCrossDomain, ec2.createTags);
+
+// Route53
+app.post('/route53/changeResourceRecordSets', allowCrossDomain, route53.changeResourceRecordSets);
 
 /**
  * Start Server
