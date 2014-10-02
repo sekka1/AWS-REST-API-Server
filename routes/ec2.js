@@ -26,3 +26,26 @@ exports.describeInstances = function(req, res){
         }
     });
 };
+
+/**
+ * createTags
+ *
+ * @param req
+ * @param res
+ */
+exports.createTags = function(req, res){
+
+    console.log('ec2 createTags');
+
+    var params = req.body;
+
+    ec2.createTags(params, function(err, data){
+        if(err){
+            console.log(err);
+            res.json(400, err);
+        }else{
+            console.log(data);
+            res.json(200, data);
+        }
+    });
+};

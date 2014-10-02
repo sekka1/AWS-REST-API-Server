@@ -86,7 +86,17 @@ AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK
 
     curl -v -X POST localhost:8080/ec2/describeInstances \
     -H 'Content-Type: application/json' \
-    -d 'params=<describeInstances params>'
+    -d '<describeInstances params>'
+    
+    
+### createTags
+Adds or overwrites one or more tags for the specified EC2 resource or resources.
+
+AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/EC2.html#createTags-property
+
+    curl -v -X POST localhost:8080/ec2/createTags \
+    -H 'Content-Type: application/json' \
+    -d '<createTags params>'
 
 Docker Container
 =================
