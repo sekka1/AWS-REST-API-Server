@@ -88,6 +88,31 @@ AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK
     -H 'Content-Type: application/json' \
     -d '<describeInstances params>'
     
+Example params
+
+    {
+      "Filters": [
+        {
+          "Name": "tag:myTagKey",
+          "Values": [
+            "my tag value here"
+          ]
+        },
+        {
+          "Name": "tag:moreTagKey",
+          "Values": [
+            "more tag values here"
+          ]
+        },
+        {
+          "Name": "instance-state-name",
+          "Values": [
+            "running"
+          ]
+        }
+      ]
+    }
+    
     
 ### createTags
 Adds or overwrites one or more tags for the specified EC2 resource or resources.
@@ -97,6 +122,20 @@ AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK
     curl -v -X POST localhost:8080/ec2/createTags \
     -H 'Content-Type: application/json' \
     -d '<createTags params>'
+    
+Example Params
+
+    {
+      "Resources": [
+        "i-1d4402f6"
+      ],
+      "Tags": [
+        {
+          "Key": "test",
+          "Value": "two"
+        }
+      ]
+    }
     
 # Route53
 
@@ -108,6 +147,30 @@ AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK
     curl -v -X POST localhost:8080/route53/changeResourceRecordSets \
     -H 'Content-Type: application/json' \
     -d '<createTags params>'
+    
+Example params
+
+    {
+      "ChangeBatch": {
+        "Changes": [
+          {
+            "Action": "CREATE",
+            "ResourceRecordSet": {
+              "Name": "my.domain.name.com.",
+              "Type": "A",
+              "TTL": "600",
+              "ResourceRecords": [
+                {
+                  "Value": "10.1.1.100"
+                }
+              ]
+            }
+          }
+        ],
+        "Comment": "created by AWS-REST-API-SERVER"
+      },
+      "HostedZoneId": "<HOSTED_ZONE_ID>"
+    }
 
 Docker Container
 =================
