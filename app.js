@@ -86,6 +86,7 @@ process.on('uncaughtException', function(err) {
 
 // CloudFormation
 app.put('/cloudformation', allowCrossDomain, cloudformation.createStack);
+app.put('/cloudformationURLTemplate', allowCrossDomain, cloudformation.createStackURLTemplate);
 app.post('/cloudformation', allowCrossDomain, cloudformation.updateStack);
 app.delete('/cloudformation/:stackName', allowCrossDomain, cloudformation.deleteStack);
 app.post('/cloudformation/validate', allowCrossDomain, cloudformation.validateTemplate);
