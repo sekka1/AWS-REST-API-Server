@@ -136,7 +136,30 @@ Example Params
         }
       ]
     }
-    
+
+### getPasswordData
+Retrieves the encrypted administrator password for an instance running Windows.
+
+AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/EC2.html#getPasswordData-property
+
+    curl -v -X POST localhost:8080/ec2/getPasswordData \
+    -H 'Content-Type: application/json' \
+    -d '<createTags params>'
+
+Example Params
+
+    {
+      "InstanceId": <instance_id>
+    }
+
+Example Return:
+
+    {
+      "InstanceId": "i-48599d7a",
+      "Timestamp": "2014-12-11T01:18:27.000Z",
+      "PasswordData": "\r\nZoV5gs0......wLrWk1KRJmKNzp6Q==\r\n"
+    }
+
 # Route53
 
 ### changeResourceRecordSets

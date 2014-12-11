@@ -49,3 +49,26 @@ exports.createTags = function(req, res){
         }
     });
 };
+
+/**
+ * getPasswordData
+ *
+ * @param req
+ * @param res
+ */
+exports.getPasswordData = function(req, res){
+
+    console.log('ec2 getPasswordData');
+
+    var params = req.body;
+
+    ec2.getPasswordData(params, function(err, data){
+        if(err){
+            console.log(err);
+            res.json(400, err);
+        }else{
+            console.log(data);
+            res.json(200, data);
+        }
+    });
+};

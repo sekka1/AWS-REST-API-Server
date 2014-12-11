@@ -21,4 +21,24 @@ describe("EC2 functionality", function(){
             done();
         });
     });
+
+    // Live test or it will fail
+    /*
+    it("should retrieve the password for a windows instance", function(done){
+
+        var instance_id = 'i-90949d7a';
+
+        var params = {
+            InstanceId: instance_id,
+            DryRun: false
+        };
+
+        ec2.getPasswordData(params, function(err, data){
+
+            console.log(err);
+            console.log(data);
+        });
+
+    });
+    */
 });
