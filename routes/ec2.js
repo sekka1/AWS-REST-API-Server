@@ -72,3 +72,29 @@ exports.getPasswordData = function(req, res){
         }
     });
 };
+
+/**
+ * Calling the generic ec2 object using reflection to call the function
+ *
+ * @param req
+ * @param res
+ */
+exports.ec2API = function(req, res){
+
+    console.log(req.body);
+
+    var apiName = req.params.apiName;
+    var params = req.body.params;
+
+    console.log('ec2 '+apiName);
+
+    ec2.ec2API(apiName, params, function(err, data){
+        if(err){
+            console.log(err);
+            res.json(400, err);
+        }else{
+            console.log(data);
+            res.json(200, data);
+        }
+    });
+};
