@@ -4,12 +4,14 @@
  */
 var ec2 = require('../lib/AWS/ec2.js');
 
+
 /**
  * Query describeInstances interface
  *
  * @param req
  * @param res
  */
+/*
 exports.describeInstances = function(req, res){
 
     console.log('ec2 describeInstances');
@@ -26,6 +28,7 @@ exports.describeInstances = function(req, res){
         }
     });
 };
+*/
 
 /**
  * createTags
@@ -33,6 +36,7 @@ exports.describeInstances = function(req, res){
  * @param req
  * @param res
  */
+/*
 exports.createTags = function(req, res){
 
     console.log('ec2 createTags');
@@ -49,6 +53,7 @@ exports.createTags = function(req, res){
         }
     });
 };
+*/
 
 /**
  * getPasswordData
@@ -56,6 +61,7 @@ exports.createTags = function(req, res){
  * @param req
  * @param res
  */
+/*
 exports.getPasswordData = function(req, res){
 
     console.log('ec2 getPasswordData');
@@ -72,6 +78,7 @@ exports.getPasswordData = function(req, res){
         }
     });
 };
+*/
 
 /**
  * Calling the generic ec2 object using reflection to call the function
