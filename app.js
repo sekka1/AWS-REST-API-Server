@@ -106,9 +106,6 @@ app.post('/sqs/sendMessage', allowCrossDomain, sqs.sendMessage);
 
 // EC2
 app.post('/ec2/:apiName', allowCrossDomain, ec2.ec2API);
-//app.post('/ec2/describeInstances', allowCrossDomain, ec2.describeInstances);
-//app.post('/ec2/createTags', allowCrossDomain, ec2.createTags);
-//app.post('/ec2/getPasswordData', allowCrossDomain, ec2.getPasswordData);
 
 // Route53
 app.post('/route53/changeResourceRecordSets', allowCrossDomain, route53.changeResourceRecordSets);
