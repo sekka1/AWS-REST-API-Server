@@ -4,6 +4,8 @@ AWS REST API Server
 
 This is basically a wrapper around the AWS javascript SDK that exposes out a REST interface for its functionality.
 
+It is like the AWS CLI tool but as a REST API.
+
 AWS Credentials Setup
 =====================
 You will need to get keys to your AWS account for the API to make requests with it.  These key strings are placed into a file called config.js.  There is a config.js.sample that you can copy and use.
@@ -78,6 +80,15 @@ AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK
     -d 'params=<SQS sendMessage PARAMS>'
 
 # EC2
+Any EC2 endpoint listed here can be used: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/EC2.html](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/EC2.html)
+
+The generic syntax is:
+
+     curl -v -X POST localhost:8080/ec2/<METHOD_NAME> \
+     -H 'Content-Type: application/json' \
+     -d '<describeInstances params>'
+
+## Here are some example usage:
 
 ### describeInstances
 Search throughout your AWS account for information about various resources.
