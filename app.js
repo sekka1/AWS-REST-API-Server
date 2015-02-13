@@ -10,7 +10,8 @@ var express = require('express')
     , jsonStripComments = require('./routes/json-stripe-comments.js')
     , sqs = require('./routes/sqs.js')
     , ec2 = require('./routes/ec2.js')
-    , route53 = require('./routes/route53.js');
+    , route53 = require('./routes/route53.js')
+    , importExport = require('./routes/importExport.js');
 
 var app = express();
 
@@ -109,6 +110,9 @@ app.post('/ec2/:apiName', allowCrossDomain, ec2.ec2API);
 
 // Route53
 app.post('/route53/changeResourceRecordSets', allowCrossDomain, route53.changeResourceRecordSets);
+
+// ImportExport
+app.post('/importExport/:apiName', allowCrossDomain, importExport.api);
 
 /**
  * Start Server
