@@ -18,6 +18,11 @@ Running the REST API
     
 Using the REST API
 ==================
+You can use any of the AWS service described here: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Service.html](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Service.html)
+
+The endpoint name is the class name (case sensitive)
+
+
 
 ## CloudFormation
 
