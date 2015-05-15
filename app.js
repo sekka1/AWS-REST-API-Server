@@ -11,7 +11,8 @@ var express = require('express')
     , sqs = require('./routes/sqs.js')
     , ec2 = require('./routes/ec2.js')
     , route53 = require('./routes/route53.js')
-    , importExport = require('./routes/importExport.js');
+    , importExport = require('./routes/importExport.js')
+    , allServices = require('./routes/allServices.js');
 
 var app = express();
 
@@ -113,6 +114,9 @@ app.post('/route53/changeResourceRecordSets', allowCrossDomain, route53.changeRe
 
 // ImportExport
 app.post('/importExport/:apiName', allowCrossDomain, importExport.api);
+
+// ELB
+app.post('/:serviceName/:apiName', allowCrossDomain, allServices.allAPI);
 
 /**
  * Start Server
