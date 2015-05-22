@@ -1,5 +1,5 @@
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu:14.04.2
 
 # System update and install
 RUN apt-get -y --force-yes update
