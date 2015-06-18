@@ -102,10 +102,6 @@ app.get('/heartbeat', allowCrossDomain, function(req, res) {
     res.json(200, { message: 'Alive'});
 });
 
-// SQS
-app.get('/sqs/:sqsParams', allowCrossDomain, sqs.receiveMessage);
-app.post('/sqs/sendMessage', allowCrossDomain, sqs.sendMessage);
-
 // EC2
 app.post('/ec2/:apiName', allowCrossDomain, ec2.ec2API);
 
@@ -115,7 +111,7 @@ app.post('/route53/changeResourceRecordSets', allowCrossDomain, route53.changeRe
 // ImportExport
 app.post('/importExport/:apiName', allowCrossDomain, importExport.api);
 
-// ELB
+// All Services
 app.post('/:serviceName/:apiName', allowCrossDomain, allServices.allAPI);
 
 /**
