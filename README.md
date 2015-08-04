@@ -30,7 +30,7 @@ The endpoint name is the class name (case sensitive)
 
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#createStack-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#createStack-property)
 
-    curl -X PUT localhost:8080/cloudformation \
+    curl -X PUT localhost:8080/CloudFormation \
     -d 'stack_config={"StackName":"testAutomationStack","OnFailure":"ROLLBACK"}' \
     -d 'cloudformation_template=<FULL_CLOUDFORMATION_JSON_TEMPLATE>' 
 
@@ -38,7 +38,7 @@ AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSD
 
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#updateStack-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#updateStack-property)
 
-    curl -X POST localhost:8080/cloudformation \
+    curl -X POST localhost:8080/CloudFormation \
     -d 'stack_config={"StackName":"testAutomationStack"}' \
     -d 'cloudformation_template=<FULL_CLOUDFORMATION_JSON_TEMPLATE>' 
 
@@ -46,19 +46,19 @@ AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSD
 
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#deleteStack-property)
 
-    curl -X DELETE localhost:8080/cloudformation/<STACK_NAME>
+    curl -X DELETE localhost:8080/CloudFormation/<STACK_NAME>
 
 ### describeStacks    
 
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#describeStacks-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#describeStacks-property)
 
-    curl -X GET localhost:8080/cloudformation/describeStacks/<STACK_NAME>    
+    curl -X GET localhost:8080/CloudFormation/describeStacks/<STACK_NAME>    
     
 ### validateTemplate
 
 AWS documentation on the parameters: [http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#validateTemplate-property](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#validateTemplate-property)
 
-    curl -X POST localhost:8080/cloudformation/validate \
+    curl -X POST localhost:8080/CloudFormation/validateTemplate \
     -d 'cloudformation_template=<FULL_CLOUDFORMATION_JSON_TEMPLATE>'
 
 ## JSON Strip Comments
@@ -75,13 +75,13 @@ AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK
 
 The params has to be URL encoded.
 
-    curl localhost:8080/sqs/<URL encoded params per the doc>
+    curl localhost:8080/SQS/<URL encoded params per the doc>
 
 ### sendMessage
 
 AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#sendMessage-property
 
-    curl -v -X POST localhost:8080/sqs/sendMessage \
+    curl -v -X POST localhost:8080/SQS/sendMessage \
     -d 'params=<SQS sendMessage PARAMS>'
 
 # EC2
@@ -89,7 +89,7 @@ Any EC2 endpoint listed here can be used: [http://docs.aws.amazon.com/AWSJavaScr
 
 The generic syntax is:
 
-     curl -v -X POST localhost:8080/ec2/<METHOD_NAME> \
+     curl -v -X POST localhost:8080/EC2/<METHOD_NAME> \
      -H 'Content-Type: application/json' \
      -d '<describeInstances params>'
 
@@ -100,7 +100,7 @@ Search throughout your AWS account for information about various resources.
 
 AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/EC2.html#describeInstances-property
 
-    curl -v -X POST localhost:8080/ec2/describeInstances \
+    curl -v -X POST localhost:8080/EC2/describeInstances \
     -H 'Content-Type: application/json' \
     -d '<describeInstances params>'
     
@@ -135,7 +135,7 @@ Adds or overwrites one or more tags for the specified EC2 resource or resources.
 
 AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/EC2.html#createTags-property
 
-    curl -v -X POST localhost:8080/ec2/createTags \
+    curl -v -X POST localhost:8080/EC2/createTags \
     -H 'Content-Type: application/json' \
     -d '<createTags params>'
     
@@ -158,7 +158,7 @@ Retrieves the encrypted administrator password for an instance running Windows.
 
 AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/EC2.html#getPasswordData-property
 
-    curl -v -X POST localhost:8080/ec2/getPasswordData \
+    curl -v -X POST localhost:8080/EC2/getPasswordData \
     -H 'Content-Type: application/json' \
     -d '<createTags params>'
 
@@ -183,7 +183,7 @@ Use this action to create or change your authoritative DNS information.
 
 AWS documentation on the parameters: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Route53.html#changeResourceRecordSets-property
 
-    curl -v -X POST localhost:8080/route53/changeResourceRecordSets \
+    curl -v -X POST localhost:8080/Route53/changeResourceRecordSets \
     -H 'Content-Type: application/json' \
     -d '<createTags params>'
     
